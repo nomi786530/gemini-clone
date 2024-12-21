@@ -1,0 +1,184 @@
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f6f7f8;
+    padding: 25px 10px;
+    transition: width 0.3s ease;
+}
+
+/* Sidebar icons */
+.sidebar img {
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Menu button */
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* New Chat button */
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 40px;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .new-chat:hover {
+    background-color: #e6eaf1;
+}
+
+.sidebar .new-chat img {
+    width: 20px;
+}
+
+.sidebar .new-chat p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Recent section */
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    animation: fadeIn 1.8s;
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px;
+    padding: 10px 15px; /* Proper padding for alignment */
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+    min-height: 40px; /* Consistent height for all entries */
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #e2e6eb;
+}
+
+.sidebar .recent-entry img {
+    width: 25px;
+}
+
+.sidebar .recent-entry p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    text-overflow: ellipsis; /* Prevent text overflow */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Adjust spacing for fewer entries */
+.sidebar.extended .recent {
+    margin-bottom: auto;
+}
+
+.sidebar.extended .recent-entry:last-child {
+    margin-bottom: 10px; /* Add spacing for the last entry */
+}
+
+/* Bottom section */
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.sidebar .bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 8px;
+    color: #282828;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .bottom-item:hover {
+    background-color: #e2e6eb;
+}
+
+.sidebar .bottom-item img {
+    width: 20px;
+    margin: 0;
+}
+
+.sidebar .bottom-item + .bottom-item {
+    margin-top: 0;
+}
+
+/* Transition for sidebar width */
+.sidebar.extended {
+    width: 240px; /* Example width for extended state */
+}
+
+.sidebar:not(.extended) {
+    width: 80px; /* Example width for collapsed state */
+}
+
+
+.app-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px; /* Default extended width */
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 70px; /* Collapsed width */
+}
+
+.main-content {
+    flex: 1;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+/* Adjust margin-left based on sidebar state */
+.main-content.sidebar-extended {
+    margin-left: 250px; /* Matches the extended sidebar width */
+}
+
+.main-content.sidebar-collapsed {
+    margin-left: 70px; /* Matches the collapsed sidebar width */
+}  
+@media (max-width:600px) {
+    .sidebar{
+        display: none;
+    }
+    
+}
